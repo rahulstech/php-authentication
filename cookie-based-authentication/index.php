@@ -1,10 +1,12 @@
 <?php 
-require_once('auth.php');
+$authenticator = include_once('auth.php');
 
-logout();
+if ($authenticator->logout()) {
+    header('Location: ./');
+}
 
-$user = isLoggedIn();
-$loggedin = !is_null($user);
+$loggedin = $authenticator->isLoggedIn();
+$user = $authenticator->getLoggedUser();
 
 ?>
 
@@ -17,7 +19,7 @@ $loggedin = !is_null($user);
 
     <?php if ($loggedin) {  ?>
         
-    <title>Profile | <?php echo $user['name']; ?></title>
+    <title>Profile | <?php echo $user->name; ?></title>
 
     <?php } else {?>
 
@@ -32,6 +34,7 @@ $loggedin = !is_null($user);
         if (!$loggedin) {
     ?>
     <a class="btn-link" href="./login.php">LogIn</a>
+    <a class="btn-link" href="./registration.php">Register</a>
     <?php
         }
         else {
@@ -41,7 +44,7 @@ $loggedin = !is_null($user);
         }
     ?>
 
-    <h2><?php if ($loggedin) { echo "Hello ".$user['name']; } else { echo "Hello Guest"; } ?></h2>
+    <h2><?php if ($loggedin) { echo "Hello ".$user->name; } else { echo "Hello Guest"; } ?></h2>
     </div>
 </body>
 </html>

@@ -1,5 +1,6 @@
 .content {
     padding: 24px;
+    font-size: 14pt;
 }
 .input-form {
     padding: 12px 16px;
@@ -19,27 +20,6 @@
     padding: 8px 12px;
 }
 
-.input-form .form-button {
-    min-height: 32px;
-    min-width: 48px;
-    padding: 8px 12px;
-    font-size: 16pt;
-    font-weight: 500;
-}
-
-.form-primary-button {
-    background-color: #624E88;
-    color: #D8D2C2;
-    border-color: #8174A0;
-    border-width: 1px;
-    border-style: solid;
-    border-radius: 8px;
-}
-
-.form-primary-button:hover {
-    background-color: rgba(98, 78, 136, 0.85);
-}
-
 .message-box {
     padding: 8px 8px;
     border-radius: 6px;
@@ -51,6 +31,27 @@
     font-size: 12pt;
 }
 
+.btn {
+    min-height: 32px;
+    min-width: 48px;
+    padding: 8px 12px;
+    font-size: 16pt;
+    font-weight: 500;
+}
+
+.btn-primary {
+    background-color: #624E88;
+    color: #D8D2C2;
+    border-color: #8174A0;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 8px;
+}
+
+.btn-primary:hover {
+    background-color: rgba(98, 78, 136, 0.85);
+}
+
 .btn-link {
     background-color: #81BFDA;
     color: #0A3981;
@@ -58,4 +59,9 @@
     font-size: 14pt;
     text-decoration: none;
     padding: 8px 12px;
+}
+
+.heading {
+    font-size: 24pt;
+    font-weight: 600;
 }
